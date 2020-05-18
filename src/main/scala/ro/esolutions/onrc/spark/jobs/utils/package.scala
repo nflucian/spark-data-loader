@@ -5,12 +5,7 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.util.Calendar
 
-import com.typesafe.config.Config
-import org.apache.spark.internal.Logging
-import org.tupol.utils.config.Extractor
-import ro.esolutions.onrc.spark.jobs.services.ResourceService.Database
-
-package object utils extends Logging {
+package object utils {
 
   val ISO_LOCAL_DATE = "yyyy-MM-dd"
 
@@ -23,9 +18,4 @@ package object utils extends Logging {
     val dateFormat = new SimpleDateFormat(ISO_LOCAL_DATE)
     dateFormat.format(Calendar.getInstance().getTime)
   }
-
-  implicit val databaseExtractor = new Extractor[Database] {
-    def extract(config: Config, path: String): Database = Database(config.getString(path))
-  }
-
 }

@@ -1,18 +1,21 @@
 package ro.esolutions.onrc.spark
 
 import org.apache.spark.sql._
+import org.tupol.spark.implicits._
+import org.tupol.spark.io.FileSourceConfiguration
+import org.tupol.spark.io.sources.CsvSourceConfiguration
+import org.tupol.spark.io._
 
 package object jobs {
+
+  val csvConfig = new CsvSourceConfiguration(options = Map("header"->"true", "delimiter"->"|", "inferSchema"->"false"))
 
   def createTable(absoluteSchema: String, relativePath: String, partition: Option[String] = None)(implicit spark: SparkSession) = {
     val absolutePath: String = getClass.getResource(relativePath).getPath
 
-    val tableDF = spark.read
-      .option("header", "true")
-      .option("delimiter", "|")
-      .option("inferSchema", "false")
-      .csv(absolutePath)
-    val writer = tableDF.write.mode(SaveMode.Overwrite)
+    val logData: DataFrame = loadData(absolutePath)
+
+    val writer = logData.write.mode(SaveMode.Overwrite)
 
     partition.foldLeft(writer)((acc, p) => {
       acc.partitionBy(p)
@@ -21,11 +24,11 @@ package object jobs {
 
   def readCSV(relativePath: String)(implicit spark: SparkSession): DataFrame = {
     val absolutePath: String = getClass.getResource(relativePath).getPath
+    loadData(absolutePath)
+  }
 
-    spark.read
-      .option("header", "true")
-      .option("delimiter", "|")
-      .option("inferSchema", "false")
-      .csv(absolutePath)
+  private def loadData(path: String)(implicit spark: SparkSession): DataFrame = {
+    val input = new FileSourceConfiguration(path, csvConfig)
+    spark.source(input).read
   }
 }
