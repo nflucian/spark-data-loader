@@ -1,8 +1,8 @@
-package ro.esolutions.onrc.spark
+package ro.esolutions.datalake.spark
 
 import org.apache.spark.sql.functions.expr
 import org.apache.spark.sql.{DataFrame, SparkSession}
-import ro.esolutions.onrc.spark.jobs.config.CustomFieldsTransformConfiguration
+import ro.esolutions.datalake.loader.config.CustomFieldsTransformConfiguration
 
 package object implicits {
 

@@ -1,12 +1,12 @@
-package ro.esolutions.onrc.spark
+package ro.esolutions.datalake
 
-import org.apache.spark.sql._
-import org.tupol.spark.implicits._
+import org.apache.spark.sql.{DataFrame, SaveMode, SparkSession}
 import org.tupol.spark.io.FileSourceConfiguration
 import org.tupol.spark.io.sources.CsvSourceConfiguration
 import org.tupol.spark.io._
+import org.tupol.spark.implicits._
 
-package object jobs {
+package object loader {
 
   val csvConfig = new CsvSourceConfiguration(options = Map("header"->"true", "delimiter"->"|", "inferSchema"->"false"))
 
@@ -31,4 +31,5 @@ package object jobs {
     val input = new FileSourceConfiguration(path, csvConfig)
     spark.source(input).read
   }
+
 }

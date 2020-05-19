@@ -1,4 +1,4 @@
-package ro.esolutions.onrc.spark.jobs.config
+package ro.esolutions.datalake.loader.config
 
 import com.typesafe.config.Config
 import org.tupol.utils.config.{Configurator, _}

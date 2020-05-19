@@ -1,9 +1,9 @@
-package ro.esolutions.onrc.spark.jobs.contexts
+package ro.esolutions.datalake.loader.contexts
 
 import com.typesafe.config.Config
 import org.tupol.utils.config.{Configurator, _}
-import ro.esolutions.onrc.spark.jobs.services.ResourceService.Database
-import ro.esolutions.onrc.spark.jobs.config._
+import ro.esolutions.datalake.loader.services.ResourceService.Database
+import ro.esolutions.datalake.loader.config._
 import scalaz.ValidationNel
 
 case class CommitMergeContext(databases: Seq[Database])

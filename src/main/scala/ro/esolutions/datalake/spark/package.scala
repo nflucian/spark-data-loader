@@ -1,4 +1,4 @@
-package ro.esolutions.onrc
+package ro.esolutions.datalake
 
 import org.tupol.utils._
 import com.typesafe.config.{Config, ConfigFactory}

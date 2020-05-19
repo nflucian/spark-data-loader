@@ -1,9 +1,9 @@
-package ro.esolutions.onrc.spark.jobs.services
+package ro.esolutions.datalake.loader.services
 
 import com.holdenkarau.spark.testing.DataFrameSuiteBase
 import org.apache.spark.sql.SaveMode
 import org.scalatest.{FlatSpec, Matchers}
-import ro.esolutions.onrc.spark.jobs.services.ResourceService.Database
+import ro.esolutions.datalake.loader.services.ResourceService.Database
 
 class ResourceServiceSpec extends FlatSpec with DataFrameSuiteBase with Matchers {
 

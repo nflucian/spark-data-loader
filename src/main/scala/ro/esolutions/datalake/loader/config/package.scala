@@ -1,8 +1,8 @@
-package ro.esolutions.onrc.spark.jobs
+package ro.esolutions.datalake.loader
 
 import com.typesafe.config.Config
 import org.tupol.utils.config.Extractor
-import ro.esolutions.onrc.spark.jobs.services.ResourceService.Database
+import ro.esolutions.datalake.loader.services.ResourceService.Database
 
 package object config {
 

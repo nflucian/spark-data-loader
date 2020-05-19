@@ -1,7 +1,7 @@
-package ro.esolutions.onrc.spark.jobs.services
+package ro.esolutions.datalake.loader.services
 
 import org.apache.spark.sql.SparkSession
-import ro.esolutions.onrc.spark.jobs.services.ResourceService.{Database, Resource}
+import ro.esolutions.datalake.loader.services.ResourceService.{Database, Resource}
 
 class ResourceService()(implicit spark: SparkSession) {
 

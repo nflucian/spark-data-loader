@@ -1,13 +1,13 @@
-package ro.esolutions.onrc.spark.jobs
+package ro.esolutions.datalake.loader
 
 import com.typesafe.config.Config
 import org.apache.spark.sql.{DataFrame, SaveMode, SparkSession}
 import org.apache.spark.sql.types.StringType
 import org.apache.spark.sql.functions._
-import ro.esolutions.onrc.spark.SparkApp
-import ro.esolutions.onrc.spark.jobs.services.ResourceService.{Database, Resource}
-import ro.esolutions.onrc.spark.jobs.contexts.MergeContext
-import ro.esolutions.onrc.spark.jobs.services.ResourceService
+import ro.esolutions.datalake.loader.services.ResourceService.Resource
+import ro.esolutions.datalake.loader.contexts.MergeContext
+import ro.esolutions.datalake.loader.services.ResourceService
+import ro.esolutions.datalake.spark.SparkApp
 
 object MergeApp extends SparkApp[MergeContext, Unit]{
 

@@ -1,7 +1,7 @@
-package ro.esolutions.onrc.spark.jobs.services
+package ro.esolutions.datalake.loader.services
 
 import org.scalatest.{BeforeAndAfterAll, FlatSpec, Inside, Matchers}
-import ro.esolutions.onrc.spark.jobs.services.ResourceService.{Database, Resource}
+import ro.esolutions.datalake.loader.services.ResourceService.{Database, Resource}
 
 class ResourceSpec extends FlatSpec with Matchers with Inside with BeforeAndAfterAll {
 

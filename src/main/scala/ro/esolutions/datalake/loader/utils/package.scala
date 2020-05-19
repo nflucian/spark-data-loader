@@ -1,4 +1,4 @@
-package ro.esolutions.onrc.spark.jobs
+package ro.esolutions.datalake.loader
 
 import java.text.SimpleDateFormat
 import java.time.LocalDate

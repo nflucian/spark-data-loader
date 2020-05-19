@@ -1,4 +1,4 @@
-package ro.esolutions.onrc.spark
+package ro.esolutions.datalake.spark
 
 import org.apache.spark.sql.SparkSession
 

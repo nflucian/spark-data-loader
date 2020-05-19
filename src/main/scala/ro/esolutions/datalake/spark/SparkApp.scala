@@ -1,4 +1,4 @@
-package ro.esolutions.onrc.spark
+package ro.esolutions.datalake.spark
 
 import com.typesafe.config.Config
 import org.apache.spark.SparkConf

@@ -1,10 +1,10 @@
-package ro.esolutions.onrc.spark.jobs
+package ro.esolutions.datalake.loader
 
 import com.holdenkarau.spark.testing.DataFrameSuiteBase
 import org.apache.spark.sql.DataFrame
 import org.scalatest.{FlatSpec, Matchers}
-import ro.esolutions.onrc.spark.jobs.contexts.MergeContext
-import ro.esolutions.onrc.spark.jobs.services.ResourceService.{Database, Resource}
+import ro.esolutions.datalake.loader.contexts.MergeContext
+import ro.esolutions.datalake.loader.services.ResourceService.{Database, Resource}
 
 class MergeAppSpec extends FlatSpec with DataFrameSuiteBase with Matchers {
 

@@ -1,13 +1,13 @@
-package ro.esolutions.onrc.spark.jobs
+package ro.esolutions.datalake.loader
 
 import com.typesafe.config.Config
 import org.apache.spark.sql.{DataFrame, SparkSession}
 import org.tupol.spark.implicits._
 import org.tupol.spark.io.{FormatAwareDataSinkConfiguration, FormatAwareDataSourceConfiguration}
 import org.tupol.utils.config.{Configurator, _}
-import ro.esolutions.onrc.spark.SparkApp
-import ro.esolutions.onrc.spark.implicits._
-import ro.esolutions.onrc.spark.jobs.config.CustomFieldsTransformConfiguration
+import ro.esolutions.datalake.loader.config.CustomFieldsTransformConfiguration
+import ro.esolutions.datalake.spark.implicits._
+import ro.esolutions.datalake.spark.SparkApp
 
 object MyApp extends SparkApp[MyAppContext, DataFrame] {
 
